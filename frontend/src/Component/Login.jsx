@@ -7,7 +7,7 @@ import List from './List';
 
 export default function Login() {
 
-    const[name,setname]=useState('');
+    const[email,setEmail]=useState('');
     const[password,setPassword]=useState('');
     const[error,setError]=useState('');
     const[isLoggedIn,setIsLoggedIn]=useState(false);
@@ -18,7 +18,7 @@ export default function Login() {
         event.preventDefault();
         try{
             const response=await axios.post('http://localhost:4000/login',{
-                name,
+                email,
                 password
             });
 
@@ -43,8 +43,8 @@ export default function Login() {
       {/* <h1>Login Form</h1> */}
       {isLoggedIn ? (<List/>) : (<form onSubmit={handleSubmit}>
       
-        <div><label htmlFor='name'>Username</label>
-      <input type='text' id='name' value={name} onChange={(e)=>setname(e.target.value)}required />
+        <div><label htmlFor='email'>Email</label>
+      <input type='email' id='email' value={email} onChange={(e)=>setEmail(e.target.value)}required />
       </div>
       <div ><label >password</label>
       <input type='password' id='password' value={password} onChange={(e)=>setPassword(e.target.value)}required />
