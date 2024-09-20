@@ -1,157 +1,242 @@
-body{
+/* General body styling */
+body {
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-h1{
-    text-align: center;
-}
-
-.todo-wrapper{
-    background-color: green;
-    padding: 2%;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3%;
-    max-height: 80vh;
-    overflow-y:auto ;
-    box-shadow:  0px 5px 7px rgb(58, 57, 57);
-}
-
-.todo-input{
+/* Main todo container */
+.todo {
+    background-image: url('../Assets/formbg.png');
+    background-size: cover;
+    min-height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Header */
+.todo h1 {
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding-top: 20px;
+}
+
+/* Main wrapper for todo list */
+.todo-wrapper {
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 80px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0px 5px 7px rgba(58, 57, 57, 0.7);
+    border-radius: 8px;
+}
+
+/* Input form */
+.todo-input {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px grey;
-    padding-bottom: 25px;
     margin-bottom: 25px;
 }
 
-.todo-input-item{
+.todo-input-item {
+    width: 95%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-right: 25px;
+    margin-bottom: 15px;
+   
 }
 
-.todo-input-item label{
+.todo-input-item label {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    color: black;
 }
 
-.todo-input-item input{
-    padding: 8px;
+.todo-input-item input {
+    padding: 10px;
     border: none;
-    width: 250px;    
-}
-
-.todo-input-item input:focus{
-    outline: 2px solid cyan;
-}
-
-.add-btn{
-    background-color: red;
-    color: white;
-    border:none;
-    border-radius: 3px;
-    margin-top: 25px;
-    padding: 10px;
-    width: 60px;
-    cursor: pointer;
-}
-
-.add-btn:hover{
+    width: 100%;
+    border-radius: 4px;
     background-color: wheat;
-    color:black;
 }
 
-.sec-btn{
-    background-color: rgb(100, 17, 234);
-    color: white;
-    border:none;
+.todo-input-item input:focus {
+    outline: 2px solid #ab1d53;
+}
+
+/* Button styling */
+.add-btn {
+    background-color: black;
+    color: #d73f79;
+    border: none;
     border-radius: 3px;
-    margin-top: 25px;
-    padding: 10px;
-    width: fit-content;
+    padding: 10px 20px;
     cursor: pointer;
+    font-size: 16px;
+    width: 50%;
+    margin-left: 25%;
+
 }
 
-.active{
-    background-color: yellow;
+.add-btn:hover {
+    background-color: white;
+    color: #ab1d53;
+    border: 1px solid #ab1d53;
+   
 }
 
-.todo-list{
+.sec-btn {
+    background-color: #ab1d53;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.active {
+    background-color: rgb(249, 196, 215);
+    color: #ab1d53;
+    border: 2px solid #ab1d53;
+}
+
+/* Button area for toggling todo and completed tasks */
+.btn-area {
     display: flex;
-    flex-direction: column;
-}
-
-.btn-area{
+    justify-content: space-around;
     margin-bottom: 15px;
 }
 
-.todo-list-item{
-    background-color: blue;
-    color: wheat;
+/* Todo list area */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-list-item {
+    background-color:#ab1d53;
+    color: white;
     display: flex;
     justify-content: space-between;
-    padding: 25px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 15px;
     margin-bottom: 10px;
+    border-radius: 4px;
 }
 
-.todo-list-item h3{
-    font-size: 25px;
-    color:green;
-    font-weight: bold;
-    margin:0;
+.todo-list-item h1 {
+    font-size: 20px;
+    color: white;
+    margin: 0;
 }
 
-.todo-list-item p{
+.todo-list-item p {
     font-size: 14px;
+    color: rgb(223, 221, 221);
+    margin-top: 5px;
+}
+
+/* Icon sizes and hover effects */
+.icon {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.icon:hover {
     color: black;
-    margin-top: 0px;
 }
 
-.icon{
-    font-size: 35px;
-    cursor: pointer;
-}
-
-.icon:hover{
-    color: red;
-}
-
-.check-icon{
-    font-size: 40px;
+.check-icon {
+    font-size: 30px;
     margin-left: 10px;
-    margin-top: 15px;
-    color: brown;
     cursor: pointer;
 }
 
-.check-icon:hover{
+.check-icon:hover {
     color: white;
 }
 
-.edit__wrapper{
+/* Edit wrapper for editing todo items */
+.edit__wrapper {
     background-color: #414040;
     padding: 10px;
     display: flex;
     flex-direction: column;
-  }
-  
-  .edit__wrapper input,.edit__wrapper textarea{
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.edit__wrapper input, .edit__wrapper textarea {
     border: 1px solid lightgray;
     padding: 10px;
     margin: 5px;
-    border-radius: 3px;
-  }
-  
-  .edit__wrapper .add-btn{
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.edit__wrapper .add-btn {
+    margin: 10px auto;
     font-size: 16px;
-    width:fit-content;
-  }
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .todo-wrapper {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .add-btn, .sec-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .todo-list-item h1 {
+        font-size: 18px;
+    }
+
+    .icon, .check-icon {
+        font-size: 20px;
+    }
+
+    .edit__wrapper input, .edit__wrapper textarea {
+        font-size: 14px;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .todo-wrapper {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .add-btn, .sec-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .todo-list-item h1 {
+        font-size: 16px;
+    }
+
+    .icon, .check-icon {
+        font-size: 18px;
+    }
+
+    .edit__wrapper input, .edit__wrapper textarea {
+        font-size: 12px;
+    }
+}

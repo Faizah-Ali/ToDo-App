@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import List from './List';
+import Image from './Assets/sideimg.png'; 
+import './CSS/Login.css';
 
 
 
@@ -36,24 +38,37 @@ export default function Login() {
     };
 
   return (
-
-
-
-    <div>
-      {/* <h1>Login Form</h1> */}
+    <div className="signup-container">
+      
+    <div className="signup-image">
+      <img src={Image} className="sideimg" alt="Signup Background" />
+    </div>
+    <div className="signup-form">
+      <h1>Login</h1>
       {isLoggedIn ? (<List/>) : (<form onSubmit={handleSubmit}>
       
-        <div><label htmlFor='email'>Email</label>
-      <input type='email' id='email' value={email} onChange={(e)=>setEmail(e.target.value)}required />
-      </div>
-      <div ><label >password</label>
-      <input type='password' id='password' value={password} onChange={(e)=>setPassword(e.target.value)}required />
-      </div>
-
-        <button type="submit">submit</button>
+        <div className="form-group">
+          <label>Email</label>
+          <input type="email" id='email' value={email} onChange={(e)=>setEmail(e.target.value)}  placeholder="Enter your email" required />
+        </div>
+       
+        <div className="form-group">
+          <label>Password</label>
+          <input type="password" id='password' value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter your password" required />
+        </div>
+       
+       
+        <button type="submit" className="signup-button">Login</button>
       </form>
       )}
       {error}
+      <p className='login-para'>Don't Have Account ? <a href="/login">Signup</a></p>
     </div>
+  </div>
+
+
+
+
+   
   )
 }

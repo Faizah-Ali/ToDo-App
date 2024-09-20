@@ -32,7 +32,7 @@ button {
     color: #ab1d53; /* White text */
   padding: 10px 20px; /* Padding around the button */
   border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 20px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   font-size: 16px; /* Font size */
   transition: all 0.3s ease; /* Smooth transition */
@@ -51,4 +51,7 @@ button:active {
   background-color: #fcf4f4; /* Even darker green on click */
   transform: scale(0.98); /* Slightly shrink on click */
   color: #ab1d53;
+}
+.features, .login, .service, .footer {
+  margin-top: 40px; /* Ensure sections don't overlap */
 }
