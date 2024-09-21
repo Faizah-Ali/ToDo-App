@@ -105,6 +105,12 @@ body {
     font-size: 16px;
 }
 
+.sec-btn:hover{
+    background-color: white;
+    color: #ab1d53;
+    border: 2px solid #ab1d53;
+}
+
 .active {
     background-color: rgb(249, 196, 215);
     color: #ab1d53;

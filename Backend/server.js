@@ -44,10 +44,10 @@ app.post('/signup',(req,res)=>{
 });
 
 app.post('/login',(req,res)=>{
-    const {email,password} = req.body;
+    const {name,email,password} = req.body;
 
     // const sql='select * from caterdata';
-    connection.query('select email,password from user_details where email=? and password=?',[email,password],(error,results,fields)=>{
+    connection.query('select name,email,password from user_details where name=?,email=? and password=?',[name,email,password],(error,results,fields)=>{
         if (error){
             console.error('Error fetching data from emp table ',error);
             res.status(500).send('error fetching data from emp table')

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CSS/Profile.css';
+import MainPageNavbar from './MainPageNavbar';
 
 export default function Profile() {
   const [user, setUser] = useState({
@@ -41,8 +42,11 @@ export default function Profile() {
   };
 
   return (
+    <>
+    <MainPageNavbar/>
     <div className='profile'>
     <div className="profile-container">
+      <div className='profile-form-container'>
       <h1>Update Your Profile</h1>
       <form className="profile-form" onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
@@ -71,10 +75,12 @@ export default function Profile() {
           value={user.phone}
           onChange={handleChange}
         />
-
+  <br/>
         <button type="submit">Update Profile</button>
       </form>
     </div>
     </div>
+    </div>
+    </>
   );
 }

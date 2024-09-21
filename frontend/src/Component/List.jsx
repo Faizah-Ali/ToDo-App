@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './CSS/List.css';
 import {AiOutlineDelete} from 'react-icons/ai';
 import {BsCheck} from 'react-icons/bs';
+import Navbar from './Navbar';
+import MainPageNavbar from './MainPageNavbar';
 
 export default function List() {
 
@@ -104,6 +106,8 @@ export default function List() {
   };
 
   return (
+    <>
+    <MainPageNavbar/>
     <div className='todo'> 
     <h1>My Todos</h1>
 
@@ -187,5 +191,6 @@ export default function List() {
 
     </div>
     </div>
+    </>
   );
 }

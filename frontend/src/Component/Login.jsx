@@ -1,8 +1,10 @@
 import React,{useState} from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import List from './List';
 import Image from './Assets/sideimg.png'; 
 import './CSS/Login.css';
+import Signup from './Signup';
 
 
 
@@ -10,9 +12,11 @@ import './CSS/Login.css';
 export default function Login() {
 
     const[email,setEmail]=useState('');
+    const[name,setName]=useState('');
     const[password,setPassword]=useState('');
     const[error,setError]=useState('');
     const[isLoggedIn,setIsLoggedIn]=useState(false);
+    const navigate = useNavigate();
 
 
     const handleSubmit = async (event) =>{
@@ -24,8 +28,9 @@ export default function Login() {
                 password
             });
 
-            if(response.data.status) {
-                setIsLoggedIn(true);
+            if(response.data.status===true) {
+               
+              navigate(`/todo-page`);
 
             }else{
                 setError('Invalid name or password');
@@ -43,10 +48,10 @@ export default function Login() {
     <div className="signup-image">
       <img src={Image} className="sideimg" alt="Signup Background" />
     </div>
+    <form onSubmit={handleSubmit} >
     <div className="signup-form">
       <h1>Login</h1>
-      {isLoggedIn ? (<List/>) : (<form onSubmit={handleSubmit}>
-      
+     
         <div className="form-group">
           <label>Email</label>
           <input type="email" id='email' value={email} onChange={(e)=>setEmail(e.target.value)}  placeholder="Enter your email" required />
@@ -59,11 +64,12 @@ export default function Login() {
        
        
         <button type="submit" className="signup-button">Login</button>
-      </form>
-      )}
-      {error}
-      <p className='login-para'>Don't Have Account ? <a href="/login">Signup</a></p>
+      
+      <p className='login-para'>Don't Have Account ? <Link to="/signup">Signup</Link></p>
     </div>
+    </form>
+      
+      {error}
   </div>
 
 

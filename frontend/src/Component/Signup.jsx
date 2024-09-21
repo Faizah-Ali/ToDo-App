@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
 import './CSS/Signup.css';
 import Image from './Assets/sideimg.png'; 
 //import Emplist from './Emplist';
@@ -16,6 +17,7 @@ export default function Signup() {
         password : '',
         phone : '',
     });
+    const navigate = useNavigate();
 
     // const[name,setname]=useState('');
     // const[email,setEmail]=useState('');
@@ -41,6 +43,8 @@ export default function Signup() {
 
             if(response.data.success) {
                 console.log('Signup Successful');
+                navigate(`/todo-page`);
+
 
             }else{
                 console.error('Signup Failed');
@@ -63,27 +67,28 @@ export default function Signup() {
       <form onSubmit={handleSubmit}>
       <div className="form-group">
           <label>Name</label>
-          <input type="text" value={formData.name}
+          <input type="text"  name="name" value={formData.name}
             onChange={handleChange} placeholder="Enter your Full Name" required />
         </div>
         <div className="form-group">
           <label>Email</label>
-          <input type="email" value={formData.email}
+          <input type="email" name="email" value={formData.email}
             onChange={handleChange} placeholder="Enter your email" required />
         </div>
         <div className="form-group">
           <label>Mobile</label>
-          <input type="text" value={formData.phone}
+          <input type="text"  name="phone" value={formData.phone}
             onChange={handleChange} placeholder="Enter your Phone No." required />
         </div>
         <div className="form-group">
           <label>Password</label>
-          <input type="password" value={formData.password}
+          <input type="password"   name="password" value={formData.password}
             onChange={handleChange} placeholder="Enter your password" required />
         </div>
        
-       
+        <Link to="/todo-page">
         <button type="submit" className="signup-button">Sign Up</button>
+        </Link>
       </form>
       <p className='login-para'>Already have an account? <a href="/login">Login here.</a></p>
     </div>
