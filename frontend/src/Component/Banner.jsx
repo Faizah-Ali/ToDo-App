@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import img1 from "./Assets/Banner.png";
 import './CSS/Banner.css';
 import Navbar from "./Navbar";
 import Features from './Features';
 import Service from './Service';
-
 import Login from './Login';
 import Footer from './Footer';
 
@@ -51,7 +50,6 @@ export default function Banner() {
         </div>
       </div>
 
-      {/* Ensure these components display correctly */}
       <Features />
       <Login />
       <Service />
