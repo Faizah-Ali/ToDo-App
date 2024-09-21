@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import './CSS/Signup.css';
 import Image from './Assets/sideimg.png'; 
+import Footer from './Footer';
 //import Emplist from './Emplist';
 
 
@@ -57,8 +58,7 @@ export default function Signup() {
     };
 
   return (
-
-    <div className="signup-container">
+    <>    <div className="signup-container">
     <div className="signup-image">
       <img src={Image} className="sideimg" alt="Signup Background" />
     </div>
@@ -94,7 +94,9 @@ export default function Signup() {
     </div>
   </div>
 
-    
+  <Footer/>
+
+  </>
   );
 }
 

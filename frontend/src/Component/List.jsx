@@ -4,6 +4,7 @@ import {AiOutlineDelete} from 'react-icons/ai';
 import {BsCheck} from 'react-icons/bs';
 import Navbar from './Navbar';
 import MainPageNavbar from './MainPageNavbar';
+import Footer from './Footer';
 
 export default function List() {
 
@@ -191,6 +192,7 @@ export default function List() {
 
     </div>
     </div>
+    <Footer/>
     </>
   );
 }

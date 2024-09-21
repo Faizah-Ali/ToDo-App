@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CSS/Profile.css';
 import MainPageNavbar from './MainPageNavbar';
+import Footer from './Footer';
 
 export default function Profile() {
   const [user, setUser] = useState({
@@ -81,6 +82,7 @@ export default function Profile() {
     </div>
     </div>
     </div>
+    <Footer/>
     </>
   );
 }

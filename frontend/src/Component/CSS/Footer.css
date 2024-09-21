@@ -1,6 +1,6 @@
 /* General styles for the footer */
 .footer {
-    background-color: #f8f8f8;
+    
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -8,6 +8,7 @@
     width: 100%;
     border-top: 1px solid #e0e0e0;
     position: relative;
+    background-image: url(../Assets/navback.jpg);
   }
   
   .footer-content {
