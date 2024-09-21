@@ -45,9 +45,7 @@ export default function Login() {
   return (
     <div className="signup-container">
       
-    <div className="signup-image">
-      <img src={Image} className="sideimg" alt="Signup Background" />
-    </div>
+    
     <form onSubmit={handleSubmit} >
     <div className="signup-form">
       <h1>Login</h1>
